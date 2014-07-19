@@ -1,0 +1,80 @@
+GetAnyFigureSq 19/07/2014 14:40
+==============
+package PrintDataOfFiguresInConsole;
+
+import java.util.Scanner;
+
+public class Main {
+
+	
+	public static void main(String[] args)  throws Exception {
+		System.out.println("Введите название фигуры, плoщадь которой хотите получить.");
+		Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+	Figure f = new Figure();
+    System.out.println(f.getName());
+    
+    if (s.equals("Rectangular"))
+        f = new Rectangular();
+    else if (s.equals("Circle"))
+        f = new Circle();
+    else
+        f = new Triangle();
+    
+    System.out.println(f.getName());
+
+}
+}
+
+
+package PrintDataOfFiguresInConsole;
+
+public class Figure {
+	public String getName() {
+		return "Figure";
+	}
+
+	//public String printSq(){};
+
+}
+
+
+
+package PrintDataOfFiguresInConsole;
+
+import java.util.Scanner;
+
+
+class Rectangular extends Figure {
+	int h = 5, w = 6;
+	@Override
+	public String getName() {
+		return "Rectangular" + " "+h*w;
+	};
+
+	 public int getSq(int h, int w) {
+	 h = 5;
+	 w = 6;
+	 return h*w;
+	 }
+}
+
+
+package PrintDataOfFiguresInConsole;
+
+class Circle extends Figure {
+	@Override
+	public String getName() {
+		return "Circle";
+	}
+}
+
+
+package PrintDataOfFiguresInConsole;
+
+class Triangle extends Figure {
+	@Override
+	public String getName() {
+		return "Triangle";
+	}
+}

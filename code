@@ -46,9 +46,13 @@ import java.util.Scanner;
 
 
 class Rectangular extends Figure {
-	int h = 5, w = 6;
+	int h, w;
 	@Override
 	public String getName() {
+		System.out.println("Введите ширину и высоту.");
+		Scanner sc = new Scanner(System.in);
+		int h = sc.nextInt();
+		int w = sc.nextInt();
 		return "Rectangular" + " "+h*w;
 	};
 
@@ -58,6 +62,7 @@ class Rectangular extends Figure {
 	 return h*w;
 	 }
 }
+
 
 
 package PrintDataOfFiguresInConsole;

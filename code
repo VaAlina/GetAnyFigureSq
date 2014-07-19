@@ -1,4 +1,4 @@
-GetAnyFigureSq 19/07/2014 15:32
+GetAnyFigureSq 19/07/2014 16:14
 ==============
 package PrintDataOfFiguresInConsole;
 
@@ -31,11 +31,8 @@ package PrintDataOfFiguresInConsole;
 
 public class Figure {
 	public String getName() {
-		return "Figure";
+		return "";
 	}
-
-	//public String printSq(){};
-
 }
 
 
@@ -49,11 +46,12 @@ class Rectangular extends Figure {
 	int h, w;
 	@Override
 	public String getName() {
-		System.out.println("Введите ширину и высоту.");
+		System.out.println("Введите высоту.");
 		Scanner sc = new Scanner(System.in);
 		int h = sc.nextInt();
+		System.out.println("Введите ширину.");
 		int w = sc.nextInt();
-		return "Rectangular" + " "+h*w;
+		return "Площадь квадрата равна" + " "+ h*w;
 	};
 }
 
@@ -61,10 +59,18 @@ class Rectangular extends Figure {
 
 package PrintDataOfFiguresInConsole;
 
+import java.util.Scanner;
+
 class Circle extends Figure {
+	
 	@Override
 	public String getName() {
-		return "Circle";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Введите значение радиуса.");
+		int r = sc.nextInt();
+		
+		double s = Math.PI*(r*r);
+		return "Площадь круга равна" + " " + s;
 	}
 }
 
@@ -83,6 +89,6 @@ class Triangle extends Figure {
 		int h = sc.nextInt();
 		
 		int s = (a*h)/2;
-		return "Triangle" + " " + s;
+		return "Площадь треугольника равна" + " " + s;
 	}
 }
